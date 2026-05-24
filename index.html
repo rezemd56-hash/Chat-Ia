@@ -25,14 +25,9 @@
             --border-hover: rgba(139, 92, 246, 0.4);
             --success: #10b981;
             --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-            --gradient-dark: linear-gradient(180deg, #1a1a25 0%, #12121a 100%);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -42,22 +37,11 @@
             overflow-x: hidden;
         }
 
-        /* Scrollbar personalizada */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-primary);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-purple-dark);
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-purple);
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-purple-dark); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-purple); }
 
-        /* Animaciones */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -84,7 +68,7 @@
             50% { opacity: 1; }
         }
 
-        /* Header */
+        /* ===== HEADER ===== */
         .header {
             position: fixed;
             top: 0;
@@ -107,6 +91,7 @@
             align-items: center;
             gap: 12px;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .logo-container img {
@@ -139,11 +124,14 @@
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+            padding: 0;
         }
 
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
+        .nav-links a:hover { color: var(--text-primary); }
 
         .nav-links a::after {
             content: '';
@@ -156,9 +144,7 @@
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover::after { width: 100%; }
 
         .header-actions {
             display: flex;
@@ -201,7 +187,16 @@
             box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
         }
 
-        /* Hero Section */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
         .hero {
             margin-top: 70px;
             padding: 100px 40px 80px;
@@ -276,10 +271,7 @@
             animation: fadeIn 0.8s ease 0.3s both;
         }
 
-        .hero-actions .btn {
-            padding: 14px 32px;
-            font-size: 1rem;
-        }
+        .hero-actions .btn { padding: 14px 32px; font-size: 1rem; }
 
         .stats-bar {
             display: flex;
@@ -297,9 +289,7 @@
             backdrop-filter: blur(10px);
         }
 
-        .stat-item {
-            text-align: center;
-        }
+        .stat-item { text-align: center; }
 
         .stat-item h3 {
             font-size: 2rem;
@@ -308,13 +298,9 @@
             margin-bottom: 5px;
         }
 
-        .stat-item p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
+        .stat-item p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
 
-        /* Sección de IAs */
+        /* ===== SECTIONS ===== */
         .section {
             padding: 80px 40px;
             max-width: 1400px;
@@ -332,9 +318,7 @@
             margin-bottom: 15px;
         }
 
-        .section-header h2 span {
-            color: var(--accent-purple-light);
-        }
+        .section-header h2 span { color: var(--accent-purple-light); }
 
         .section-header p {
             color: var(--text-secondary);
@@ -343,7 +327,7 @@
             margin: 0 auto;
         }
 
-        /* Grid de IAs */
+        /* ===== AI GRID ===== */
         .ai-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -387,9 +371,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--accent-glow);
         }
 
-        .ai-card:hover::before {
-            transform: scaleX(1);
-        }
+        .ai-card:hover::before { transform: scaleX(1); }
 
         .ai-card-header {
             display: flex;
@@ -422,16 +404,8 @@
             border-radius: 50%;
         }
 
-        .ai-info h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .ai-info .ai-role {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
+        .ai-info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+        .ai-info .ai-role { font-size: 0.85rem; color: var(--text-muted); }
 
         .ai-description {
             color: var(--text-secondary);
@@ -500,7 +474,7 @@
             box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
         }
 
-        /* Sección de Chat Demo */
+        /* ===== CHAT DEMO ===== */
         .chat-demo {
             background: var(--bg-secondary);
             border-radius: 30px;
@@ -553,10 +527,7 @@
             font-weight: 700;
         }
 
-        .chat-header-info h4 {
-            font-size: 1rem;
-            font-weight: 600;
-        }
+        .chat-header-info h4 { font-size: 1rem; font-weight: 600; }
 
         .chat-header-info p {
             font-size: 0.8rem;
@@ -569,6 +540,8 @@
         .chat-messages {
             padding: 24px;
             min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -598,13 +571,8 @@
             flex-shrink: 0;
         }
 
-        .message.user .message-avatar {
-            background: var(--bg-hover);
-        }
-
-        .message.ai .message-avatar {
-            background: var(--gradient-purple);
-        }
+        .message.user .message-avatar { background: var(--bg-hover); }
+        .message.ai .message-avatar { background: var(--gradient-purple); }
 
         .message-content {
             background: var(--bg-card);
@@ -613,6 +581,7 @@
             border: 1px solid var(--border-color);
             font-size: 0.95rem;
             line-height: 1.5;
+            word-wrap: break-word;
         }
 
         .message.user .message-content {
@@ -651,7 +620,7 @@
         .chat-input {
             flex: 1;
             background: var(--bg-primary);
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--border-color);
             border-radius: 14px;
             padding: 12px 18px;
             color: var(--text-primary);
@@ -666,9 +635,7 @@
             box-shadow: 0 0 0 3px var(--accent-glow);
         }
 
-        .chat-input::placeholder {
-            color: var(--text-muted);
-        }
+        .chat-input::placeholder { color: var(--text-muted); }
 
         .send-btn {
             width: 46px;
@@ -690,12 +657,9 @@
             box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
         }
 
-        .send-btn svg {
-            width: 20px;
-            height: 20px;
-        }
+        .send-btn svg { width: 20px; height: 20px; }
 
-        /* Features Section */
+        /* ===== FEATURES ===== */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -731,19 +695,10 @@
             font-size: 1.5rem;
         }
 
-        .feature-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+        .feature-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .feature-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
 
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Footer */
+        /* ===== FOOTER ===== */
         .footer {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border-color);
@@ -765,9 +720,7 @@
             gap: 20px;
         }
 
-        .footer-brand .logo-container {
-            width: fit-content;
-        }
+        .footer-brand .logo-container { width: fit-content; }
 
         .footer-brand p {
             color: var(--text-secondary);
@@ -794,11 +747,10 @@
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s ease;
+            cursor: pointer;
         }
 
-        .footer-links a:hover {
-            color: var(--accent-purple-light);
-        }
+        .footer-links a:hover { color: var(--accent-purple-light); }
 
         .footer-bottom {
             max-width: 1200px;
@@ -810,15 +762,9 @@
             align-items: center;
         }
 
-        .footer-bottom p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
+        .footer-bottom p { color: var(--text-muted); font-size: 0.85rem; }
 
-        .social-links {
-            display: flex;
-            gap: 16px;
-        }
+        .social-links { display: flex; gap: 16px; }
 
         .social-links a {
             width: 40px;
@@ -832,6 +778,7 @@
             color: var(--text-secondary);
             text-decoration: none;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .social-links a:hover {
@@ -841,42 +788,95 @@
             transform: translateY(-3px);
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            .header {
-                padding: 0 20px;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .stats-bar {
-                flex-direction: column;
-                gap: 30px;
-            }
-            .chat-demo {
-                padding: 30px 20px;
-            }
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
         }
 
-        /* Partículas decorativas */
+        .modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .modal-overlay.active .modal { transform: scale(1); }
+
+        .modal-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-purple);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+
+        .modal h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .modal p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .modal .btn { width: 100%; padding: 14px; font-size: 1rem; }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* ===== PARTICLES ===== */
         .particles {
             position: fixed;
             top: 0;
@@ -897,33 +897,50 @@
             opacity: 0.3;
             animation: float 6s ease-in-out infinite;
         }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .header { padding: 0 20px; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero h1 { font-size: 2.5rem; }
+            .stats-bar { flex-direction: column; gap: 30px; }
+            .chat-demo { padding: 30px 20px; }
+            .footer-content { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
     </style>
 </head>
 <body>
     <!-- Partículas decorativas -->
     <div class="particles" id="particles"></div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="logo-container">
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <a href="#inicio" class="logo-container" onclick="scrollToSection('inicio'); return false;">
             <img src="images/logo.png" alt="IaChat Logo">
             <span class="logo-text">IaChat</span>
-        </div>
+        </a>
         <nav>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#ias">IAs</a></li>
-                <li><a href="#chat">Chat</a></li>
-                <li><a href="#caracteristicas">Características</a></li>
+                <li><a onclick="scrollToSection('inicio')">Inicio</a></li>
+                <li><a onclick="scrollToSection('ias')">IAs</a></li>
+                <li><a onclick="scrollToSection('chat')">Chat</a></li>
+                <li><a onclick="scrollToSection('caracteristicas')">Características</a></li>
             </ul>
         </nav>
         <div class="header-actions">
-            <button class="btn btn-outline">Iniciar Sesión</button>
-            <button class="btn btn-primary">Registrarse</button>
+            <button class="btn btn-outline" onclick="openModal('login')">Iniciar Sesión</button>
+            <button class="btn btn-primary" onclick="openModal('register')">Registrarse</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="inicio">
         <div class="hero-badge">
             <span class="dot"></span>
@@ -932,8 +949,8 @@
         <h1>Chatea con las <span>mejores IAs</span><br>del mundo</h1>
         <p>Accede a múltiples inteligencias artificiales especializadas en un solo lugar. Desde asistentes creativos hasta expertos técnicos, todo lo que necesitas está aquí.</p>
         <div class="hero-actions">
-            <button class="btn btn-primary">Comenzar Ahora</button>
-            <button class="btn btn-outline">Ver Demo</button>
+            <button class="btn btn-primary" onclick="openModal('register')">Comenzar Ahora</button>
+            <button class="btn btn-outline" onclick="scrollToSection('chat')">Ver Demo</button>
         </div>
         <div class="stats-bar">
             <div class="stat-item">
@@ -955,14 +972,14 @@
         </div>
     </section>
 
-    <!-- Sección de IAs -->
+    <!-- ===== SECCIÓN IAs ===== -->
     <section class="section" id="ias">
         <div class="section-header">
             <h2>Nuestras <span>Inteligencias Artificiales</span></h2>
             <p>Elige entre nuestra selección de IAs especializadas para cada necesidad</p>
         </div>
         <div class="ai-grid">
-            <div class="ai-card">
+            <div class="ai-card" onclick="openChat('Aura', 'Asistente General', 'linear-gradient(135deg, #8b5cf6, #6d28d9)')">
                 <div class="ai-card-header">
                     <div class="ai-avatar online" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">A</div>
                     <div class="ai-info">
@@ -985,7 +1002,7 @@
                 </div>
             </div>
 
-            <div class="ai-card">
+            <div class="ai-card" onclick="openChat('CodeMaster', 'Desarrollador Experto', 'linear-gradient(135deg, #ec4899, #be185d)')">
                 <div class="ai-card-header">
                     <div class="ai-avatar online" style="background: linear-gradient(135deg, #ec4899, #be185d);">C</div>
                     <div class="ai-info">
@@ -1008,7 +1025,7 @@
                 </div>
             </div>
 
-            <div class="ai-card">
+            <div class="ai-card" onclick="openChat('Muse', 'Creativa & Artística', 'linear-gradient(135deg, #f59e0b, #d97706)')">
                 <div class="ai-card-header">
                     <div class="ai-avatar online" style="background: linear-gradient(135deg, #f59e0b, #d97706);">M</div>
                     <div class="ai-info">
@@ -1031,7 +1048,7 @@
                 </div>
             </div>
 
-            <div class="ai-card">
+            <div class="ai-card" onclick="openChat('DataMind', 'Analista de Datos', 'linear-gradient(135deg, #10b981, #059669)')">
                 <div class="ai-card-header">
                     <div class="ai-avatar online" style="background: linear-gradient(135deg, #10b981, #059669);">D</div>
                     <div class="ai-info">
@@ -1054,7 +1071,7 @@
                 </div>
             </div>
 
-            <div class="ai-card">
+            <div class="ai-card" onclick="openChat('Lingua', 'Políglota Experta', 'linear-gradient(135deg, #3b82f6, #2563eb)')">
                 <div class="ai-card-header">
                     <div class="ai-avatar online" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">L</div>
                     <div class="ai-info">
@@ -1077,7 +1094,7 @@
                 </div>
             </div>
 
-            <div class="ai-card">
+            <div class="ai-card" onclick="openChat('Strategos', 'Consultor de Negocios', 'linear-gradient(135deg, #ef4444, #dc2626)')">
                 <div class="ai-card-header">
                     <div class="ai-avatar online" style="background: linear-gradient(135deg, #ef4444, #dc2626);">S</div>
                     <div class="ai-info">
@@ -1102,7 +1119,7 @@
         </div>
     </section>
 
-    <!-- Demo de Chat -->
+    <!-- ===== DEMO DE CHAT ===== -->
     <section class="section" id="chat">
         <div class="section-header">
             <h2>Interfaz de <span>Chat Moderna</span></h2>
@@ -1111,49 +1128,23 @@
         <div class="chat-demo">
             <div class="chat-container">
                 <div class="chat-header">
-                    <div class="chat-header-avatar">A</div>
+                    <div class="chat-header-avatar" id="demoAvatar">A</div>
                     <div class="chat-header-info">
-                        <h4>Aura - Asistente General</h4>
+                        <h4 id="demoName">Aura - Asistente General</h4>
                         <p><span style="width:8px;height:8px;background:#10b981;border-radius:50%;display:inline-block;margin-right:5px;"></span>En línea</p>
                     </div>
                 </div>
-                <div class="chat-messages">
+                <div class="chat-messages" id="chatMessages">
                     <div class="message ai">
                         <div class="message-avatar">A</div>
                         <div class="message-content">
                             ¡Hola! Soy Aura, tu asistente virtual. ¿En qué puedo ayudarte hoy?
                         </div>
                     </div>
-                    <div class="message user">
-                        <div class="message-avatar">U</div>
-                        <div class="message-content">
-                            Necesito ayuda para organizar mi semana laboral. Tengo muchas reuniones y deadlines.
-                        </div>
-                    </div>
-                    <div class="message ai">
-                        <div class="message-avatar">A</div>
-                        <div class="message-content">
-                            ¡Por supuesto! Te ayudaré a organizar tu semana de manera eficiente. Primero, dime: ¿cuáles son tus prioridades principales esta semana? También puedo sugerirte técnicas de gestión del tiempo como el método Pomodoro o el bloqueo de tiempo.
-                        </div>
-                    </div>
-                    <div class="message user">
-                        <div class="message-avatar">U</div>
-                        <div class="message-content">
-                            Me interesa el método Pomodoro. ¿Puedes explicármelo?
-                        </div>
-                    </div>
-                    <div class="message ai">
-                        <div class="message-avatar">A</div>
-                        <div class="typing-indicator">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
                 </div>
                 <div class="chat-input-area">
-                    <input type="text" class="chat-input" placeholder="Escribe tu mensaje...">
-                    <button class="send-btn">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Escribe tu mensaje..." onkeypress="if(event.key==='Enter')sendMessage()">
+                    <button class="send-btn" onclick="sendMessage()">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                         </svg>
@@ -1163,7 +1154,7 @@
         </div>
     </section>
 
-    <!-- Características -->
+    <!-- ===== CARACTERÍSTICAS ===== -->
     <section class="section" id="caracteristicas">
         <div class="section-header">
             <h2>¿Por qué elegir <span>IaChat</span>?</h2>
@@ -1203,57 +1194,115 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <div class="logo-container">
+                <a href="#inicio" class="logo-container" onclick="scrollToSection('inicio'); return false;">
                     <img src="images/logo.png" alt="IaChat Logo">
                     <span class="logo-text">IaChat</span>
-                </div>
+                </a>
                 <p>La plataforma líder en conversaciones con inteligencias artificiales. Conectamos personas con tecnología de vanguardia para resolver problemas, generar ideas y potenciar la creatividad.</p>
             </div>
             <div class="footer-links">
                 <h4>Plataforma</h4>
                 <ul>
-                    <li><a href="#">IAs Disponibles</a></li>
-                    <li><a href="#">Precios</a></li>
-                    <li><a href="#">API</a></li>
-                    <li><a href="#">Estado</a></li>
+                    <li><a onclick="scrollToSection('ias')">IAs Disponibles</a></li>
+                    <li><a onclick="openModal('comingSoon')">Precios</a></li>
+                    <li><a onclick="openModal('comingSoon')">API</a></li>
+                    <li><a onclick="openModal('comingSoon')">Estado</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h4>Empresa</h4>
                 <ul>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Carreras</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a onclick="openModal('comingSoon')">Sobre Nosotros</a></li>
+                    <li><a onclick="openModal('comingSoon')">Blog</a></li>
+                    <li><a onclick="openModal('comingSoon')">Carreras</a></li>
+                    <li><a onclick="openModal('comingSoon')">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#">Privacidad</a></li>
-                    <li><a href="#">Términos</a></li>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">Seguridad</a></li>
+                    <li><a onclick="openModal('comingSoon')">Privacidad</a></li>
+                    <li><a onclick="openModal('comingSoon')">Términos</a></li>
+                    <li><a onclick="openModal('comingSoon')">Cookies</a></li>
+                    <li><a onclick="openModal('comingSoon')">Seguridad</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>© 2026 IaChat. Todos los derechos reservados.</p>
             <div class="social-links">
-                <a href="#" aria-label="Twitter">𝕏</a>
-                <a href="#" aria-label="GitHub">⚡</a>
-                <a href="#" aria-label="Discord">💬</a>
-                <a href="#" aria-label="LinkedIn">in</a>
+                <a onclick="openModal('comingSoon')" aria-label="Twitter">𝕏</a>
+                <a onclick="openModal('comingSoon')" aria-label="GitHub">⚡</a>
+                <a onclick="openModal('comingSoon')" aria-label="Discord">💬</a>
+                <a onclick="openModal('comingSoon')" aria-label="LinkedIn">in</a>
             </div>
         </div>
     </footer>
 
+    <!-- ===== MODAL ===== -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal" id="modalContent" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-icon" id="modalIcon">🚀</div>
+            <h3 id="modalTitle">¡Bienvenido!</h3>
+            <p id="modalText">Esta funcionalidad estará disponible próximamente.</p>
+            <button class="btn btn-primary" onclick="closeModal()" id="modalBtn">Entendido</button>
+        </div>
+    </div>
+
     <script>
-        // Generar partículas decorativas
+        // ===== VARIABLES GLOBALES =====
+        let currentAI = { name: 'Aura', initial: 'A' };
+        const aiResponses = {
+            'Aura': [
+                "¡Interesante pregunta! Déjame pensar en eso...",
+                "Claro, puedo ayudarte con eso. ¿Necesitas más detalles?",
+                "Entiendo perfectamente. Te sugiero organizar tus ideas primero.",
+                "¡Excelente elección! Aquí tienes algunas recomendaciones...",
+                "Basándome en lo que me dices, te recomendaría probar con un enfoque diferente."
+            ],
+            'CodeMaster': [
+                "Puedo ayudarte con ese código. ¿Qué lenguaje estás usando?",
+                "Ese error suele deberse a una variable no definida. Revisa la línea 42.",
+                "Para optimizar eso, considera usar una estructura de datos diferente.",
+                "¡Buena práctica! También podrías implementar tests unitarios.",
+                "Esa arquitectura es sólida. ¿Has considerado usar microservicios?"
+            ],
+            'Muse': [
+                "¡Qué inspirador! Déjame crear algo único para ti...",
+                "Esa idea tiene mucho potencial. Aquí va mi versión:",
+                "El arte está en los detalles. Te propongo este enfoque creativo:",
+                "Me encanta tu visión. Vamos a pulirla juntos.",
+                "Esa combinación de estilos podría ser fascinante. ¿Qué te parece?"
+            ],
+            'DataMind': [
+                "Analizando los datos... Los patrones sugieren que...",
+                "Según el análisis estadístico, la correlación es significativa.",
+                "Podrías visualizar esos datos con un heatmap para mayor claridad.",
+                "El modelo predictivo indica una tendencia alcista del 78%.",
+                "Recomiendo aplicar normalización antes del entrenamiento del modelo."
+            ],
+            'Lingua': [
+                "¡Claro! Esa frase en español se traduce como...",
+                "La gramática de ese idioma tiene una estructura fascinante.",
+                "Te corrijo: el subjuntivo se usa aquí porque expresa duda.",
+                "En ese contexto cultural, sería más apropiado decir...",
+                "¡Excelente progreso! Tu pronunciación mejora cada día."
+            ],
+            'Strategos': [
+                "Analizando el mercado... Tu estrategia debería enfocarse en...",
+                "El ROI proyectado para esa inversión es del 23% anual.",
+                "Considera diversificar tu portafolio en sectores emergentes.",
+                "Esa campaña de marketing podría beneficiarse de targeting por segmentos.",
+                "El análisis competitivo muestra una oportunidad de nicho del 15%."
+            ]
+        };
+
+        // ===== PARTÍCULAS =====
         const particlesContainer = document.getElementById('particles');
         for (let i = 0; i < 30; i++) {
             const particle = document.createElement('div');
@@ -1265,39 +1314,130 @@
             particlesContainer.appendChild(particle);
         }
 
-        // Smooth scroll para navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+        // ===== SCROLL =====
+        function scrollToSection(id) {
+            const target = document.getElementById(id);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
 
-        // Header scroll effect
-        let lastScroll = 0;
+        // ===== HEADER SCROLL =====
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 50) {
+            const header = document.getElementById('header');
+            if (window.pageYOffset > 50) {
                 header.style.background = 'rgba(10, 10, 15, 0.95)';
                 header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
             } else {
                 header.style.background = 'rgba(10, 10, 15, 0.85)';
                 header.style.boxShadow = 'none';
             }
-            lastScroll = currentScroll;
         });
 
-        // Animación de entrada al scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        // ===== MODAL =====
+        const modalData = {
+            'login': { icon: '🔐', title: 'Iniciar Sesión', text: 'Introduce tu email y contraseña para acceder a tu cuenta de IaChat.', btn: 'Acceder' },
+            'register': { icon: '✨', title: 'Crear Cuenta', text: 'Únete a IaChat y comienza a chatear con las mejores IAs del mundo. Es gratis.', btn: 'Registrarme' },
+            'comingSoon': { icon: '🚀', title: 'Próximamente', text: 'Esta funcionalidad está en desarrollo. ¡Mantente atento a las actualizaciones!', btn: 'Entendido' }
         };
 
+        function openModal(type) {
+            const overlay = document.getElementById('modalOverlay');
+            const data = modalData[type] || modalData['comingSoon'];
+            document.getElementById('modalIcon').textContent = data.icon;
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalText').textContent = data.text;
+            document.getElementById('modalBtn').textContent = data.btn;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(e) {
+            if (e && e.target !== e.currentTarget) return;
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // ===== CHAT FUNCIONAL =====
+        function openChat(name, role, gradient) {
+            currentAI = { name: name, initial: name[0] };
+            document.getElementById('demoName').textContent = name + ' - ' + role;
+            document.getElementById('demoAvatar').textContent = name[0];
+            document.getElementById('demoAvatar').style.background = gradient;
+
+            const messagesDiv = document.getElementById('chatMessages');
+            messagesDiv.innerHTML = `
+                <div class="message ai">
+                    <div class="message-avatar" style="background: ${gradient};">${name[0]}</div>
+                    <div class="message-content">
+                        ¡Hola! Soy ${name}, tu ${role.toLowerCase()}. ¿En qué puedo ayudarte hoy?
+                    </div>
+                </div>
+            `;
+
+            scrollToSection('chat');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const messagesDiv = document.getElementById('chatMessages');
+
+            // Mensaje del usuario
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message user';
+            userMsg.innerHTML = `
+                <div class="message-avatar">U</div>
+                <div class="message-content">${escapeHtml(text)}</div>
+            `;
+            messagesDiv.appendChild(userMsg);
+            input.value = '';
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Indicador de escritura
+            setTimeout(() => {
+                const typing = document.createElement('div');
+                typing.className = 'message ai';
+                typing.id = 'typingIndicator';
+                typing.innerHTML = `
+                    <div class="message-avatar" style="background: var(--gradient-purple);">${currentAI.initial}</div>
+                    <div class="typing-indicator">
+                        <span></span><span></span><span></span>
+                    </div>
+                `;
+                messagesDiv.appendChild(typing);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+                // Respuesta de la IA
+                setTimeout(() => {
+                    const typingEl = document.getElementById('typingIndicator');
+                    if (typingEl) typingEl.remove();
+
+                    const responses = aiResponses[currentAI.name] || aiResponses['Aura'];
+                    const response = responses[Math.floor(Math.random() * responses.length)];
+
+                    const aiMsg = document.createElement('div');
+                    aiMsg.className = 'message ai';
+                    aiMsg.innerHTML = `
+                        <div class="message-avatar" style="background: var(--gradient-purple);">${currentAI.initial}</div>
+                        <div class="message-content">${response}</div>
+                    `;
+                    messagesDiv.appendChild(aiMsg);
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                }, 1500 + Math.random() * 1000);
+            }, 300);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // ===== ANIMACIONES SCROLL =====
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1313,6 +1453,12 @@
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
+
+        // ===== TECLA ESC PARA CERRAR MODAL =====
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
     </script>
 </body>
+</html>
 </html>
