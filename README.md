@@ -6,10 +6,10 @@ Este proyecto no esta terminado solo es una beta, ninguna Ia esta en funcionamie
 ---
 
 #Portada del proyecto
+
+
+
 ![Cover Profile](https://i.ibb.co/Gv9CdPhZ/download.jpg)
-
-
-
 
 ---
 
